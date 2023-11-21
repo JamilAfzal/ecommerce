@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:project/pages/Cart.dart';
 import 'package:project/pages/Categories.dart';
+import 'package:project/pages/categoriesbuy.dart';
 import 'package:project/pages/categorieslogic.dart';
 
 class CategoriesTile extends StatefulWidget {
@@ -20,7 +21,7 @@ class _CategoriesTileState extends State<CategoriesTile> {
     return GestureDetector(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Categories()));
+            context, MaterialPageRoute(builder: (context) => CartPage()));
       },
       child: Container(
         height: 300,

@@ -8,6 +8,8 @@ import 'package:project/pages/Categories.dart';
 import 'package:project/pages/HomePAGE.dart';
 import 'package:project/pages/HotSelling.dart';
 import 'package:project/pages/Hotsellingtile.dart';
+import 'package:project/pages/categoriesbuy.dart';
+import 'package:project/pages/hotsellcart.dart';
 import 'package:project/pages/sigin.dart';
 import 'package:project/pages/tilelogic.dart';
 
@@ -32,6 +34,12 @@ class _MenuPageState extends State<MenuPage> {
         image: "assets/images/washingmachine.jpg",
         ratings: "4.9",
         subtitle: "In Elec "),
+    HotSelling(
+        amount: "\$250",
+        text: "Rolex",
+        image: "assets/images/watches.jpg",
+        ratings: "5.0",
+        subtitle: "In Watches")
   ];
   List cards = [
     Accessories(
@@ -41,9 +49,9 @@ class _MenuPageState extends State<MenuPage> {
         price: "\$30-70"),
     Accessories(
         name: "Shoes",
-        imagePath: "assets/images/shoes.jpg",
+        imagePath: "assets/images/air-jordan.jpeg",
         rating: "4.2",
-        price: "\$25"),
+        price: "\$25-200"),
     Accessories(
         name: "Watches",
         imagePath: "assets/images/watches.jpg",
@@ -57,6 +65,21 @@ class _MenuPageState extends State<MenuPage> {
   ];
   late PageController controller;
   int selectedindex = 0;
+  void navigatetocat(int index) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => CategoriesBuy(accessories: cards[index])));
+  }
+
+  void navigatetocart(int index) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => FinalHotSell(
+                  hotsellingg: sell[index],
+                )));
+  }
 
   @override
   void initState() {
@@ -70,6 +93,7 @@ class _MenuPageState extends State<MenuPage> {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.black,
+        foregroundColor: Colors.white,
         centerTitle: true,
         title: Text(
           "Shop Inn",
@@ -171,7 +195,7 @@ class _MenuPageState extends State<MenuPage> {
               children: [
                 // Replace HomePagee() with the actual content for the first page
                 Container(
-                    color: Colors.grey[400],
+                    color: Colors.grey[500],
                     child: Column(
                       children: [
                         Padding(
@@ -200,7 +224,7 @@ class _MenuPageState extends State<MenuPage> {
                           ]),
                         ),
                         SizedBox(
-                          height: 15,
+                          height: 8,
                         ),
                         Container(
                           height: 50,
@@ -247,20 +271,20 @@ class _MenuPageState extends State<MenuPage> {
                                   child: Card(
                                       elevation: 15,
                                       child: Tile(
-                                          onTap: () {},
+                                          onTap: () {
+                                            navigatetocat(index);
+                                          },
                                           accessories: cards[index])),
                                 );
                               })),
                         ),
-                        SizedBox(
-                          height: 10,
-                        ),
+                        SizedBox(height: 6),
                         Text(
                           "Hot Selling 🔥",
-                          style: TextStyle(fontSize: 22),
+                          style: TextStyle(fontSize: 18),
                         ),
                         Container(
-                          height: 220,
+                          height: 225,
                           child: ListView.builder(
                               scrollDirection: Axis.horizontal,
                               itemCount: sell.length,
@@ -271,7 +295,10 @@ class _MenuPageState extends State<MenuPage> {
                                     child: Card(
                                       elevation: 15,
                                       child: HotSell(
-                                          onTap: () {}, hotsell: (sell[index])),
+                                          onTap: () {
+                                            navigatetocart(index);
+                                          },
+                                          hotsell: (sell[index])),
                                     ));
                               }),
                         )

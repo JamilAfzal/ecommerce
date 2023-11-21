@@ -177,21 +177,24 @@ class _SignUpState extends State<SignUp> {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        if (text1.text.toString().isEmpty &&
-                            text2.text.toString().isEmpty &&
-                            text3.text.toString().isEmpty &&
-                            text4.text.toString().isEmpty &&
-                            text5.text.toString().isEmpty) {
-                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                              content: Text("Please Fill all the Fields")));
-                        } else {
+                        if (text1.text.toString().isNotEmpty &&
+                            text2.text.toString().isNotEmpty &&
+                            text3.text.toString().isNotEmpty &&
+                            text4.text.toString().isNotEmpty &&
+                            text5.text.toString().isNotEmpty) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: ((context) => MenuPage())));
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: Text("Please Fill all the Fields")));
                         }
                       },
-                      child: Text("Submit"),
+                      child: Text(
+                        "Submit",
+                        style: TextStyle(color: Colors.white),
+                      ),
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black,
                           padding: EdgeInsets.symmetric(

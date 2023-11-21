@@ -3,10 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:project/pages/Accessories.dart';
 import 'package:project/pages/Cart.dart';
+import 'package:project/pages/categoriesbuy.dart';
 
 class Tile extends StatefulWidget {
   final Accessories accessories;
-  void Function()? onTap;
+  Function()? onTap;
   Tile({super.key, required this.accessories, required this.onTap});
 
   @override
@@ -18,8 +19,7 @@ class _TileState extends State<Tile> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: ((context) => CartPage())));
+        widget.onTap?.call();
       },
       child: Container(
           height: 300,

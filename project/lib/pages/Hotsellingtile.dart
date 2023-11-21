@@ -1,5 +1,8 @@
+// ignore_for_file: prefer_const_constructors, must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:project/pages/HotSelling.dart';
+import 'package:project/pages/hotsellcart.dart';
 
 class HotSell extends StatefulWidget {
   void Function()? onTap;
@@ -14,7 +17,9 @@ class _HotSellState extends State<HotSell> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        widget.onTap?.call();
+      },
       child: Container(
         height: 200,
         width: 200,
@@ -23,6 +28,8 @@ class _HotSellState extends State<HotSell> {
             Image.asset(
               widget.hotsell.image,
               fit: BoxFit.cover,
+              height: 120,
+              width: 200,
             ),
             SizedBox(
               height: 15,

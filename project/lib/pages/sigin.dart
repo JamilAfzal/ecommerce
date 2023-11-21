@@ -18,7 +18,7 @@ class _SigninState extends State<Signin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[400],
+      backgroundColor: Colors.grey[200],
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -43,7 +43,7 @@ class _SigninState extends State<Signin> {
           ),
           Expanded(
             child: Container(
-              color: Colors.grey[400],
+              color: Colors.grey[200],
               width: double.infinity,
               height: 400,
               child: SingleChildScrollView(
