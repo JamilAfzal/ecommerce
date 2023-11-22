@@ -22,16 +22,17 @@ class _TileState extends State<Tile> {
         widget.onTap?.call();
       },
       child: Container(
-          height: 300,
+          height: 270,
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(11)),
           child: Column(children: [
             Image.asset(
               widget.accessories.imagePath,
               fit: BoxFit.cover,
-              height: 140,
+              height: 120,
+              width: 200,
             ),
             SizedBox(
-              height: 15,
+              height: 5,
             ),
             Text(
               widget.accessories.name,
@@ -39,7 +40,7 @@ class _TileState extends State<Tile> {
             ),
             SizedBox(
               width: 160,
-              height: 80,
+              height: 30,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [

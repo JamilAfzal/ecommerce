@@ -17,10 +17,27 @@ class FinalHotSell extends StatefulWidget {
 }
 
 class _FinalHotSellState extends State<FinalHotSell> {
+  double amount() {
+    String stringValue = widget.hotsellingg.amount;
+    try {
+      return double.parse(stringValue);
+    } catch (e) {
+      print('Error parsing amount: $stringValue');
+      return 0.0; // or any default value you prefer
+    }
+  }
+
+  double calculateTotalAmount() {
+    return amount() * counttt;
+  }
+
   int counttt = 1;
   void increasingggcount() {
     setState(() {
       counttt++;
+
+      double totalamount = calculateTotalAmount();
+      print('Increased count, new total amount: $totalamount');
     });
   }
 
@@ -28,6 +45,9 @@ class _FinalHotSellState extends State<FinalHotSell> {
     if (counttt > 1) {
       setState(() {
         counttt--;
+
+        double totalAmount = calculateTotalAmount();
+        print('Increased count, new total amount: $totalAmount');
       });
     }
   }
@@ -37,7 +57,7 @@ class _FinalHotSellState extends State<FinalHotSell> {
     return Scaffold(
         backgroundColor: Colors.grey[200],
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
+          backgroundColor: Colors.black,
           foregroundColor: Colors.white,
           elevation: 0,
         ),
@@ -66,6 +86,10 @@ class _FinalHotSellState extends State<FinalHotSell> {
               Text(
                 "Price : ",
                 style: TextStyle(fontSize: 22),
+              ),
+              Text(
+                "\$",
+                style: TextStyle(color: Colors.green, fontSize: 22),
               ),
               Text(
                 widget.hotsellingg.amount,
@@ -108,22 +132,6 @@ class _FinalHotSellState extends State<FinalHotSell> {
           SizedBox(
             height: 32,
           ),
-          Row(
-            children: [
-              SizedBox(
-                width: 20,
-              ),
-              Text(
-                "Highlights: ",
-                style: TextStyle(fontSize: 25, color: Colors.grey),
-              ),
-              Text(
-                  "Our ${widget.hotsellingg.text} are very reliable \n and provide some pretty good\n comfort to all our users in \nevery aspect")
-            ],
-          ),
-          SizedBox(
-            height: 70,
-          ),
           Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(21), color: Colors.black),
@@ -133,7 +141,11 @@ class _FinalHotSellState extends State<FinalHotSell> {
               child: Row(
                 children: [
                   Text(
-                    "Go To Cart",
+                    '\$',
+                    style: TextStyle(color: Colors.white, fontSize: 25),
+                  ),
+                  Text(
+                    calculateTotalAmount().toString(),
                     style: TextStyle(color: Colors.white, fontSize: 25),
                   ),
                   Container(

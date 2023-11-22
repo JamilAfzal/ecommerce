@@ -23,19 +23,19 @@ class MenuPage extends StatefulWidget {
 class _MenuPageState extends State<MenuPage> {
   List sell = [
     HotSelling(
-        amount: "\$300",
+        amount: "300",
         text: "Air Jordan",
         image: "assets/images/air-jordan.jpeg",
         ratings: "4.8",
         subtitle: "In Shoes"),
     HotSelling(
-        amount: "\$500",
+        amount: "500",
         text: " Haier ",
-        image: "assets/images/washingmachine.jpg",
+        image: "assets/images/speakers.jpg",
         ratings: "4.9",
         subtitle: "In Elec "),
     HotSelling(
-        amount: "\$250",
+        amount: "250",
         text: "Rolex",
         image: "assets/images/watches.jpg",
         ratings: "5.0",
@@ -104,7 +104,7 @@ class _MenuPageState extends State<MenuPage> {
         backgroundColor: Colors.grey.shade900,
         child: Column(children: [
           Container(
-            height: 300,
+            height: 200,
             width: double.infinity,
             child: DrawerHeader(
                 child: Center(
@@ -116,7 +116,7 @@ class _MenuPageState extends State<MenuPage> {
             )),
           ),
           Container(
-            height: 510,
+            height: 310,
             child: Column(
               children: [
                 SizedBox(
@@ -157,7 +157,7 @@ class _MenuPageState extends State<MenuPage> {
                   color: Colors.white,
                 ),
                 SizedBox(
-                  height: 252,
+                  height: 10,
                 ),
                 InkWell(
                   onTap: () {
@@ -223,11 +223,8 @@ class _MenuPageState extends State<MenuPage> {
                                                 255, 246, 244, 244))))),
                           ]),
                         ),
-                        SizedBox(
-                          height: 8,
-                        ),
                         Container(
-                          height: 50,
+                          height: 30,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -257,7 +254,7 @@ class _MenuPageState extends State<MenuPage> {
                           ),
                         ),
                         SizedBox(
-                          height: 10,
+                          height: 6,
                         ),
                         Expanded(
                           child: ListView.builder(
@@ -284,7 +281,7 @@ class _MenuPageState extends State<MenuPage> {
                           style: TextStyle(fontSize: 18),
                         ),
                         Container(
-                          height: 225,
+                          height: 200,
                           child: ListView.builder(
                               scrollDirection: Axis.horizontal,
                               itemCount: sell.length,

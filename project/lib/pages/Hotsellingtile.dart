@@ -60,6 +60,12 @@ class _HotSellState extends State<HotSell> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
+                  '\$',
+                  style: TextStyle(
+                      color: const Color.fromARGB(255, 41, 146, 45),
+                      fontSize: 15),
+                ),
+                Text(
                   widget.hotsell.amount,
                   style: TextStyle(
                       color: const Color.fromARGB(255, 41, 146, 45),

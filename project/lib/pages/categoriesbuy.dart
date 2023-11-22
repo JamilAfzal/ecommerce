@@ -107,22 +107,6 @@ class _CategoriesBuyState extends State<CategoriesBuy> {
           SizedBox(
             height: 32,
           ),
-          Row(
-            children: [
-              SizedBox(
-                width: 20,
-              ),
-              Text(
-                "Highlights: ",
-                style: TextStyle(fontSize: 25, color: Colors.grey),
-              ),
-              Text(
-                  "Our ${widget.accessories.name} are very reliable \n and provide some pretty good\n comfort to all our users in \nevery aspect")
-            ],
-          ),
-          SizedBox(
-            height: 70,
-          ),
           Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(21), color: Colors.black),
