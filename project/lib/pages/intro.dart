@@ -18,9 +18,18 @@ class _IntroPageState extends State<IntroPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(height: 300),
+          Container(
+            height: 200.0,
+            decoration: BoxDecoration(
+              color: Colors.black,
+              boxShadow: [BoxShadow(blurRadius: 20.0)],
+              borderRadius: BorderRadius.vertical(
+                  bottom: Radius.elliptical(
+                      MediaQuery.of(context).size.width, 100.0)),
+            ),
+          ),
           SizedBox(
-            height: 30,
+            height: 35,
           ),
           Padding(
             padding: const EdgeInsets.all(30.0),

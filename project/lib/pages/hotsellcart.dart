@@ -60,6 +60,11 @@ class _FinalHotSellState extends State<FinalHotSell> {
           backgroundColor: Colors.black,
           foregroundColor: Colors.white,
           elevation: 0,
+          centerTitle: true,
+          title: Text(
+            "Shop Inn",
+            style: TextStyle(letterSpacing: 1.6),
+          ),
         ),
         body: ListView(children: [
           Image.asset(
@@ -114,20 +119,19 @@ class _FinalHotSellState extends State<FinalHotSell> {
             ],
           ),
           SizedBox(
-            height: 35,
+            height: 20,
           ),
-          Row(
-            children: [
-              SizedBox(
-                width: 20,
-              ),
-              Text(
-                "Description: ",
-                style: TextStyle(fontSize: 25, color: Colors.grey),
-              ),
-              Text(
-                  "Our ${widget.hotsellingg.text} are very reliable \n and provide some pretty good\n comfort to all our users in \nevery aspect")
-            ],
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Text(
+              "Description: ",
+              style: TextStyle(fontSize: 25, color: Colors.grey),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Text(
+                "Our ${widget.hotsellingg.text} are very reliable and provide some pretty good comfort to all our users in every aspect"),
           ),
           SizedBox(
             height: 32,
@@ -148,6 +152,9 @@ class _FinalHotSellState extends State<FinalHotSell> {
                     calculateTotalAmount().toString(),
                     style: TextStyle(color: Colors.white, fontSize: 25),
                   ),
+                  SizedBox(
+                    width: 5,
+                  ),
                   Container(
                     decoration: BoxDecoration(
                         shape: BoxShape.circle, color: Colors.white24),
@@ -160,9 +167,15 @@ class _FinalHotSellState extends State<FinalHotSell> {
                       color: Colors.white,
                     ),
                   ),
+                  SizedBox(
+                    width: 5,
+                  ),
                   Text(
                     counttt.toString(),
                     style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                  SizedBox(
+                    width: 5,
                   ),
                   Container(
                     decoration: BoxDecoration(

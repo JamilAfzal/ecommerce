@@ -89,20 +89,19 @@ class _CategoriesBuyState extends State<CategoriesBuy> {
             ],
           ),
           SizedBox(
-            height: 35,
+            height: 20,
           ),
-          Row(
-            children: [
-              SizedBox(
-                width: 20,
-              ),
-              Text(
-                "Description: ",
-                style: TextStyle(fontSize: 25, color: Colors.grey),
-              ),
-              Text(
-                  "Our ${widget.accessories.name} are very reliable \n and provide some pretty good\n comfort to all our users in \nevery aspect")
-            ],
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Text(
+              "Description: ",
+              style: TextStyle(fontSize: 25, color: Colors.grey),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Text(
+                "Our ${widget.accessories.name} are very reliable  and provide some pretty good comfort to all our users in every aspect"),
           ),
           SizedBox(
             height: 32,
